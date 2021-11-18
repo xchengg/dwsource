@@ -46,6 +46,9 @@ class Maze {
           else if (grid[r][c] == FINISH) {
             fill(255, 0, 0);
           }//end fill
+          else if (grid[r][c] == PATH) {
+            fill(0, 0, 255);
+          }
           rect(c*cellWidth, r*cellHeight, cellWidth, cellHeight);
         }//cols
       }//rows

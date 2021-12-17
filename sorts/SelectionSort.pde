@@ -17,8 +17,25 @@ void setup() {
 
 void draw() {
   background(0);
+  //if pos == length - 1, then we're sorted! display
+    displayArray(arr, -1, -1, -1);
+    
+  //else 
+     //displayArray(arr, pos, testPos, smallPos);
+    //compare elements at testPos and smallPos
+    //if testPos element < smallPos element, update smallPos
+    
+    //move testPos over 1
+    
+    //if testPos == length of the array
+      //swap(pos, smallPos)
+      //move pos over by 1
+      //set testPos to pos + 1
+      //set smallPos to pos
   
-  displayArray(arr, -1, -1, -1);
+  
+  
+  
 }//draw
 
 
@@ -37,7 +54,7 @@ int[] randomArray(int num) {
   return values;
 }//randomArray
 
-void displayArray(int[] arr, int p, int testp, int smallp) {
+void displayArray(int[] arr, int p, int tp, int sp) {
   int barWidth = width / arr.length;
   int x = 0;
   int y = 0;
@@ -45,13 +62,13 @@ void displayArray(int[] arr, int p, int testp, int smallp) {
   for (int i=0; i<arr.length; i++) {
     y = height - arr[i];
     if (i == p ) {
-      fill(#7EBCE6);
+      fill(230, 0, 230);
     }
-    else if (i == testp) {
-      fill(#FA824C);
+    else if (i == tp) {
+      fill(0, 230, 230);
     }
-    else if (i == smallp) {
-      fill(#8980F5);
+    else if (i == sp) {
+      fill(230, 230, 0);
     }
     else {
       fill(255);

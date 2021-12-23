@@ -8,27 +8,18 @@ void setup() {
   background(0);
   arr = randomArray(10);
 
-  sortEnd = 0;
-  pos = sortEnd + 1;
-  insertVal = arr[pos];
 }//setup
 
 
 void draw() {
   background(0);
 
-  //if sorted, just display. sortEnd is arr.length -1
+  //if sorted, just display. 
   displayArray(arr, -1, -1, -1);
-
+  
   //else
-  displayArray(arr, pos, sortEnd, insertVal);
-    //compare insertVal and arr[pos -1]
-    //if pos is not 0 AND inserVal <
-      //move value at [pos-1] to [pos]
-      //decrease pos
-    //else
-      //set arr[pos] to insertVal
-      //reset sortEnd, pos, insertVal
+     displayArray(arr, -1, -1, -1);
+
 
 }//draw
 

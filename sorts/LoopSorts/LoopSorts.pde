@@ -1,9 +1,10 @@
 int arr[];
+int ARRSIZE = 50;
 
 void setup() {
   size(400, 400);
   background(0);
-  arr = randomArray(50);
+  arr = randomArray(ARRSIZE);
 }//setup
 
 void draw() {
@@ -44,5 +45,10 @@ void displayArray(int[] arr) {
 }//displayArray
 
 void keyPressed() {
-  bubleSort(arr);
+  if (key == 's') {
+    arr = randomArray(ARRSIZE);
+  }
+  else if (key == 'b') {
+    bubleSort(arr);
+  }
 }

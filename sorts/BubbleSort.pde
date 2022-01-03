@@ -17,21 +17,34 @@ void setup() {
 
 void draw() {
   background(0);
-  
+
   //if endpos is 0, sorted! just display
+  if ( endPos == 0 ) {
     displayArray(arr, -1, -1, -1);
-  
+  }//sorted
   //else
-    displayArray(arr, -1, -1, -1);
+  else {
+    displayArray(arr, pos, testPos, endPos);
     //compare values at pos and testPos
     //if out of order, swap
+    if ( arr[pos] > arr[testPos] ) {
+      swap(arr, pos, testPos);
+    }
     //if not out of order
+    else {
       //+1 to pos and testPos
-    
+      pos++;
+      testPos++;
+    }
     //if pos is at endpos
+    if (pos == endPos) {
       //reset pos to 0 (and testPos to 1)
+      pos = 0;
+      testPos = 1;
       //decrease endPos
-
+      endPos--;
+    }
+  } //unsorted
 }//draw
 
 

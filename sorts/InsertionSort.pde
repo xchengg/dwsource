@@ -18,20 +18,33 @@ void draw() {
   background(0);
 
   //if sorted, just display. sortEnd is arr.length -1
-  displayArray(arr, -1, -1, -1);
-
+  if ( sortEnd == arr.length - 1) {
+    displayArray(arr, -1, -1, -1);
+  }
   //else
+  else {
   displayArray(arr, pos, sortEnd, insertVal);
     //compare insertVal and arr[pos -1]
     //if pos is not 0 AND inserVal <
+    if (pos != 0 && insertVal < arr[pos-1] ) {
       //move value at [pos-1] to [pos]
+      arr[pos] = arr[pos-1];
       //decrease pos
+      pos--;
+    }
     //else
+    else {
       //set arr[pos] to insertVal
+      arr[pos] = insertVal;
       //reset sortEnd, pos, insertVal
-
+      sortEnd++;
+      pos = sortEnd + 1;
+      if (pos < arr.length) {
+        insertVal = arr[pos];
+      }
+    }
+  }//unsorted
 }//draw
-
 
 
 int[] randomArray(int num) {
@@ -67,9 +80,3 @@ void displayArray(int[] arr, int p, int se, int iv) {
     x+= barWidth;
   }
 }//displayArray
-
-void keyPressed() {
-  if (stepwise) {
-    redraw();
-  }
-}

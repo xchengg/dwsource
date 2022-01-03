@@ -18,24 +18,31 @@ void setup() {
 void draw() {
   background(0);
   //if pos == length - 1, then we're sorted! display
+  if ( pos == arr.length - 1) {
     displayArray(arr, -1, -1, -1);
-    
-  //else 
-     //displayArray(arr, pos, testPos, smallPos);
+  }
+  //else
+  else {
+     displayArray(arr, pos, testPos, smallPos);
     //compare elements at testPos and smallPos
     //if testPos element < smallPos element, update smallPos
-    
+    if (arr[testPos] < arr[smallPos]) {
+      smallPos = testPos;
+    }
     //move testPos over 1
-    
+    testPos++;
+
     //if testPos == length of the array
-      //swap(pos, smallPos)
+    if (testPos == arr.length) {
+      swap(arr, pos, smallPos);
       //move pos over by 1
+      pos++;
       //set testPos to pos + 1
+      testPos = pos+1;
       //set smallPos to pos
-  
-  
-  
-  
+      smallPos = pos;
+    }
+  }
 }//draw
 
 
